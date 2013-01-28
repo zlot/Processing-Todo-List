@@ -20,21 +20,19 @@ class List {
       .addListener(newTodoListener);
   }
   
-  void draw() {
-    
-  }
   
   class Listener implements ControlListener {
     /* every control event is automatically forwarded to the function controlEvent(ControlEvent)
-     * inside a sketch if such function is available.
-     */
+     * inside a sketch if such function is available. */
     public void controlEvent(ControlEvent theEvent) {
       //if(theEvent.getName() == "newTodo")
       // NOTE:: Do not need the above clause because this listener's scope is restricted to
       //        the controller which it has been attached! (the newTodo textfield).
-      Item createdItem = new Item(newTodo.getText()); // (could also say theEvent.getController().getText();)
-      itemCollection.add(createdItem); 
-      new Todo(createdItem);
+      todoOrder.add(primaryId);
+      Todo todo = new Todo(primaryId, newTodo.getText(), todoOrder.size()); // (could also say theEvent.getController().getText();)
+      todoHashMap.put(primaryId, todo);
+      primaryId++; //step forward with primaryId.
+    
     }
   }
 }

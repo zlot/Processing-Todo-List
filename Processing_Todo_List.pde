@@ -1,8 +1,9 @@
 import controlP5.*;
-import java.util.Stack;
 
-ArrayList itemCollection;
-//Stack todoStack;
+ArrayList<Integer> todoOrder;
+HashMap<Integer, Todo> todoHashMap;
+int primaryId;
+
 PFont font;
 String testString;
 color bgCol;
@@ -25,20 +26,17 @@ void setup() {
   bgCol = color(30);
   font = loadFont("MS-PGothic-20.vlw");
   textFont(font, 20);
-  testString = "Buy some Soymilk";
   
   cp5 = new ControlP5(this);
-  itemCollection = new ArrayList<Item>();
- // todoStack = new Stack<Todo>();
-  
+  todoHashMap = new HashMap<Integer, Todo>(100);
+  primaryId = 0; // init to 0.
+  todoOrder = new ArrayList<Integer>();
+
   list = new List();
 }
 
 
 void draw() {
   background(bgCol);  // refresh background constantly.
-  fill(230);
-  text(testString, 30, 160);
-  
 }
 
