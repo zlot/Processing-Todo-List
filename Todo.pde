@@ -50,8 +50,8 @@ class Todo {
       .setPosition(width-leftMargin-btnwh*2-(btnwh*1.4-btnwh), topMargin+(stackingOrder)*todoHeight+todoPadding)
       .setSize(btnwh, btnwh)
       .setLabel("X")
-      .setColorBackground(color(0,88,148))
       .addListener(cancelListener)
+      .setColorForeground(color(#00466a));
       ;
     cancel.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
   }
