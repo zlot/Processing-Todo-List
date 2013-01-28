@@ -14,6 +14,7 @@ int todoHeight;
 int todoPadding;
 List list;
 
+color behindTextColor;
 
 void setup() {
   size(350, 600);
@@ -24,9 +25,10 @@ void setup() {
   todoHeight = 34;
   todoPadding = 12;
   bgCol = color(30);
+  behindTextColor = #02344D;
   font = loadFont("MS-PGothic-20.vlw");
-  textFont(font, 20);
-  
+  textFont(font, 20);  
+ 
   cp5 = new ControlP5(this);
   todoHashMap = new HashMap<Integer, Todo>(100);
   primaryId = 0; // init to 0.

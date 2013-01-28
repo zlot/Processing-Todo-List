@@ -37,7 +37,7 @@ class Todo {
       ;
   }
   void drawDone() {
-    done = cp5.addBang(id + "done") // looks like eg "1done"
+    done = cp5.addBang(id + "done")
       .setPosition(width-leftMargin-btnwh*1.4, topMargin+(stackingOrder)*todoHeight+todoPadding)
       .setSize(round(btnwh*1.4), btnwh)
       .setLabel("Done")
@@ -46,7 +46,7 @@ class Todo {
     done.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
   }
   void drawCancel() {
-    cancel = cp5.addBang(id + "cancel") // looks like eg "1cancel"
+    cancel = cp5.addBang(id + "cancel")
       .setPosition(width-leftMargin-btnwh*2-(btnwh*1.4-btnwh), topMargin+(stackingOrder)*todoHeight+todoPadding)
       .setSize(btnwh, btnwh)
       .setLabel("X")
@@ -96,11 +96,12 @@ class Todo {
   
   void doneAction() {
     textfield.setColorBackground(color(0,180,0)).lock();
-    done.setColorBackground(color(0,180,0));
+    done.setColorForeground(color(0,180,0));
     doneFlag = !doneFlag;
   }
   void unDoneAction() {
-    textfield.setColorBackground(color(#02344D)).unlock();
+    textfield.setColorBackground(color(behindTextColor)).unlock();
+     done.setColorForeground(color(behindTextColor));
     doneFlag = !doneFlag;
   }
   
